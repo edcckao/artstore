@@ -55,7 +55,10 @@ Rails.application.configure do
   # config.cache_store = :mem_cache_store
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
+  # CDN
   # config.action_controller.asset_host = "http://assets.example.com"
+  # split components across domain
+  # config.action_controller.asset_host = "http://assets%d.example.com"
 
   # Precompile additional assets.
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
