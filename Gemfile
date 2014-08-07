@@ -42,7 +42,11 @@ gem 'settingslogic'
 gem 'will_paginate'
 gem 'ransack'
 
+# sidekiq
 gem 'sidekiq'
+# sidekiq web admin
+gem 'sinatra', require: false
+gem 'slim'
 
 group :development do 
   gem "annotate"

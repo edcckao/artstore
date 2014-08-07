@@ -45,4 +45,10 @@ Rails.application.routes.draw do
   end
 
   root :to => "products#index"
+
+  require 'sidekiq/web'
+  # Admin only
+  authenticate :user, lambda { |u| u.admin? } do  
+    mount Sidekiq::Web => '/sidekiq'
+  end
 end

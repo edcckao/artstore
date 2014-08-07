@@ -7,6 +7,6 @@ class OrderShippingService
     # Reserve for interactions with logistics
 
     @order.ship!
-    ShipMailer.notify_order_shipped(@order).deliver
+    SendmailWorker.perform_async(@order.id, 'notify_order_shipped')
   end
 end
